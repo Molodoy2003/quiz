@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.App {
+  width: 1000px;
+  border-radius: 30px;
+  padding: 40px;
+  background-color: #f7f7f7;
+  position: relative;
+
+  // .result {
+  //   text-align: center;
+
+  // button {
+  //   font-weight: bold;
+  //   font-family: 'Nunito', sans-serif;
+  //   border-radius: 30px;
+  //   border: 0;
+  //   padding: 15px 30px;
+  //   font-size: 20px;
+  //   background-color: darken(#ff006e, 3%);
+  //   color: #fff;
+  //   margin-top: 20px;
+  //   cursor: pointer;
+  // }
+  // }
+
+  .result {
+    text-align: center;
+
+    h1 {
+      text-align: left;
+    }
+
+    h2 {
+      text-align: left;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    button {
+      font-weight: bold;
+      font-family: 'Nunito', sans-serif;
+      border-radius: 15px;
+      border: 0;
+      padding: 12px 25px;
+      font-size: 20px;
+      background-color: blue;
+      color: #fff;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .questions-list {
+    margin-top: 20px;
+
+    h2 {
+      text-align: left;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    p {
+      text-align: left;
+    }
+  }
+
+  .question-item {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+  }
+
+  .correct {
+    background-color: #d4edda;
+  }
+
+  .incorrect {
+    background-color: #f8d7da;
+  }
+
+  /////////////////////
+
+  .progress-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .progress-status {
+    font-size: 16px;
+    color: #333;
+    margin: 0 10px;
+  }
+
+  .progress {
+    flex-grow: 1;
+    height: 10px;
+    border-radius: 30px;
+    background-color: rgb(232, 232, 232);
+    margin: 0 10px; /* Отступы между статусами и прогресс-баром */
+  }
+
+  .progress__inner {
+    height: 100%;
+    position: relative;
+    border-radius: 30px;
+    background: blue; /* Цвет прогресс-бара */
+    transition: width 0.3s ease-in-out; /* Плавный переход ширины */
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    height: 50px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:after {
+    width: 90%;
+    bottom: -20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      padding: 15px;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      &:hover .circle {
+        background-color: blue;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid gray;
+        margin-right: 10px;
+      }
+    }
+  }
+}
